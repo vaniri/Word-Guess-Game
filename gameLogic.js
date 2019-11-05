@@ -1,6 +1,6 @@
 let curRound = null;
 const roundInfo = [
-  { word: "kenny", pic: "kenny.png" }
+  { word: "kenny", pic: "kenny.jpg" }
   // { word: "dog", pic: "human.png" },
   // { word: "blanket", pic: "human.png" }
 ];
@@ -68,7 +68,7 @@ function insEventHandler() {
 
 function showMeTheWinner() {
   document.getElementById("game_win").innerHTML = "You Get It!";
-  document.querySelector("body").style.background = `url("image/${curRound.pic}")`;
+  document.querySelector(".game_container").style.background = `url("image/${curRound.pic}") no-repeat center`;
 }
 
 function showLose() {
