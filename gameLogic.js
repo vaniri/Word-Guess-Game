@@ -1,15 +1,19 @@
 let curRound = null;
-const roundInfo = [{ word: "cat", style: {} }, { word: "dog", style: {} }, { word: "blanket", style: {} }];
+const roundInfo = [
+  { word: "kenny", pic: "kenny.png" }
+  // { word: "dog", pic: "human.png" },
+  // { word: "blanket", pic: "human.png" }
+];
 
 // Object-constructor for one round
 
 class Round {
-  constructor(word, style) {
+  constructor(word, pic) {
     this.wordToGuess = word;
     this.rightLetters = Array(word.length).fill("_");
     this.wrongLetters = [];
     this.attempts = 10;
-    this.style = style;
+    this.pic = pic;
   }
 
   gameLogic(userGuess) {
@@ -37,8 +41,8 @@ class Round {
 function startGame() {
   let randomObj = roundInfo[Math.floor(Math.random() * roundInfo.length)];
   let randomWord = randomObj.word;
-  let randomStyle = randomj.style;
-  curRound = new Round(randomWord, randomStyle);
+  let randomPic = randomObj.pic;
+  curRound = new Round(randomWord, randomPic);
   renderGameState();
   document.getElementById("game_win").innerHTML = "";
   document.getElementById("game_lose").innerHTML = "";
@@ -64,6 +68,7 @@ function insEventHandler() {
 
 function showMeTheWinner() {
   document.getElementById("game_win").innerHTML = "You Get It!";
+  document.querySelector("body").style.background = `url("image/${curRound.pic}")`;
 }
 
 function showLose() {
