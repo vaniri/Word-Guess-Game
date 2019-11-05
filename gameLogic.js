@@ -1,13 +1,15 @@
 let curRound = null;
+const roundInfo = [{ word: "cat", style: {} }, { word: "dog", style: {} }, { word: "blanket", style: {} }];
 
 // Object-constructor for one round
 
 class Round {
-  constructor(word) {
+  constructor(word, style) {
     this.wordToGuess = word;
     this.rightLetters = Array(word.length).fill("_");
     this.wrongLetters = [];
     this.attempts = 10;
+    this.style = style;
   }
 
   gameLogic(userGuess) {
@@ -33,7 +35,10 @@ class Round {
 //Game starter
 
 function startGame() {
-  curRound = new Round("blanket");
+  let randomObj = roundInfo[Math.floor(Math.random() * roundInfo.length)];
+  let randomWord = randomObj.word;
+  let randomStyle = randomj.style;
+  curRound = new Round(randomWord, randomStyle);
   renderGameState();
   document.getElementById("game_win").innerHTML = "";
   document.getElementById("game_lose").innerHTML = "";
