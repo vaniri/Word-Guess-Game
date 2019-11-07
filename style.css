@@ -7,9 +7,9 @@ body {
 .game_container {
     background-image: url("image/SouthPark2.jpg");
     opacity: 0.7;
-    background-position: center;
-    max-width: 47%;
-    height: 550px;
+    background-position: bottom;
+    max-width: 45%;
+    height: 490px;
     color: rgb(255, 123, 0);
     text-align: center;
     margin-top: 0;
@@ -17,7 +17,37 @@ body {
 }
 
 .game_container h1 {
-    padding-top: 30px;
+    padding-top: 20px;
+    font-size: 30px;
+    font-weight: 300;
+    background: linear-gradient(to right, orange, red, purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+#right_letters {
+    padding: 7px 0;
+    font-size: 25px;
+    font-weight: 800;
+    color: white;
+    background-image: linear-gradient(to right, red, orange, purple);
+}
+
+#wrong_letters {
+    font-size: 20px;
+    color: rgb(255, 123, 0);
+}
+
+#attempts {
+    font-size: 25px;
+    font-weight: 400;
+    padding: 20px 0;
+    color: red;
+}
+
+#game_win, #game_lose {
+    padding-top: 10px;
     font-size: 30px;
     font-weight: 300;
 }
