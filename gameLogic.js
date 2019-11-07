@@ -77,13 +77,15 @@ function insEventHandler() {
 //render function
 
 function showMeTheWinner() {
-  document.getElementById("game_win").innerHTML = "You Get It!";
+  document.getElementById("wrong_letters").innerHTML = "";
+  document.getElementById("right_letters").innerHTML = "You Get It!";
   document.querySelector("body").style.background = `url("image/${curRound.pic}")`;
   setTimeout(startGame, 3000);
 }
 
 function showLose() {
-  document.getElementById("game_lose").innerHTML = "Nice try! Game over";
+  document.getElementById("wrong_letters").innerHTML = "";
+  document.getElementById("right_letters").innerHTML = "Nice try! Game over";
   setTimeout(startGame, 3000);
 }
 
