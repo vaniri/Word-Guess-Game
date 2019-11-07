@@ -50,9 +50,7 @@ window.onload = () => {
 function startGame() {
   document.querySelector("body").style.background = `url("image/Hk9nelN.jpg") no-repeat right`;
   let randomObj = roundInfo[Math.floor(Math.random() * roundInfo.length)];
-  let randomWord = randomObj.word;
-  let randomPic = randomObj.pic;
-  curRound = new Round(randomWord, randomPic);
+  curRound = new Round(randomObj.word, randomObj.pic);
   renderGameState();
   document.getElementById("game_win").innerHTML = "";
   document.getElementById("game_lose").innerHTML = "";
@@ -67,7 +65,7 @@ function insEventHandler() {
     curRound.gameLogic(userGuess);
     renderGameState();
     if (curRound.checkWin()) {
-      showMeTheWinner();
+      showWin();
     } else if (curRound.attempts == 0) {
       showLose();
     }
@@ -76,7 +74,7 @@ function insEventHandler() {
 
 //render function
 
-function showMeTheWinner() {
+function showWin() {
   document.getElementById("wrong_letters").innerHTML = "";
   document.getElementById("right_letters").innerHTML = "You Get It!";
   document.querySelector("body").style.background = `url("image/${curRound.pic}")`;
