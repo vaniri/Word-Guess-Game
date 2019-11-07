@@ -1,20 +1,23 @@
 body {
     background-image: url("image/Hk9nelN.jpg");
-    background-repeat: no-repeat;
-    background-position: left;
+    background-repeat: repeat;
+    background-position: right;
 }
 
 .game_container {
     background-image: url("image/SouthPark2.jpg");
-    background-repeat: no-repeat;
-    background-position: right;
-    max-width: 50%;
-    height: 500px;
+    opacity: 0.7;
+    background-position: center;
+    max-width: 47%;
+    height: 550px;
     color: rgb(255, 123, 0);
     text-align: center;
+    margin-top: 0;
     margin-left: 10px;
 }
 
 .game_container h1 {
-    padding-top: 20px;
+    padding-top: 30px;
+    font-size: 30px;
+    font-weight: 300;
 }
