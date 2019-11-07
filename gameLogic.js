@@ -1,8 +1,12 @@
 let curRound = null;
 const roundInfo = [
-  { word: "kenny", pic: "kenny.jpg" }
-  // { word: "dog", pic: "human.png" },
-  // { word: "blanket", pic: "human.png" }
+  { word: "kenny", pic: "kenny.jpg" },
+  { word: "towelie", pic: "towelie.jpg" },
+  { word: "mackey", pic: "mkay.jpg" },
+  { word: "fingerbang", pic: "fingerbang.jpg" },
+  { word: "wendy", pic: "wendy.jpeg" },
+  { word: "butters", pic: "butters.jpg" },
+  { word: "stan", pic: "stan.png" }
 ];
 
 // Object-constructor for one round
@@ -10,7 +14,7 @@ const roundInfo = [
 class Round {
   constructor(word, pic) {
     this.wordToGuess = word;
-    this.rightLetters = Array(word.length).fill("_");
+    this.rightLetters = Array(word.length).fill("■");
     this.wrongLetters = [];
     this.attempts = 10;
     this.pic = pic;
@@ -18,7 +22,6 @@ class Round {
 
   gameLogic(userGuess) {
     let isGood = false;
-    this.attempts--;
     for (let i = 0; i <= this.wordToGuess.length; i++) {
       if (this.wordToGuess[i] === userGuess) {
         this.rightLetters[i] = this.wordToGuess[i];
@@ -27,6 +30,7 @@ class Round {
     }
     console.log("User guess: " + userGuess + ": " + isGood);
     if (isGood == false) {
+      this.attempts--;
       this.wrongLetters.push(userGuess);
     }
   }
@@ -38,7 +42,13 @@ class Round {
 
 //Game starter
 
+window.onload = () => {
+  insEventHandler();
+  setTimeout(startGame, 1000);
+};
+
 function startGame() {
+  document.querySelector("body").style.background = `url("image/Hk9nelN.jpg") no-repeat right`;
   let randomObj = roundInfo[Math.floor(Math.random() * roundInfo.length)];
   let randomWord = randomObj.word;
   let randomPic = randomObj.pic;
@@ -68,17 +78,14 @@ function insEventHandler() {
 
 function showMeTheWinner() {
   document.getElementById("game_win").innerHTML = "You Get It!";
-  document.querySelector(".game_container").style.background = `url("image/${curRound.pic}") no-repeat center`;
+  document.querySelector("body").style.background = `url("image/${curRound.pic}")`;
+  setTimeout(startGame, 3000);
 }
 
 function showLose() {
   document.getElementById("game_lose").innerHTML = "Nice try! Game over";
+  setTimeout(startGame, 3000);
 }
-
-window.onload = () => {
-  insEventHandler();
-  setTimeout(startGame, 1000);
-};
 
 function renderGameState() {
   document.getElementById("right_letters").innerHTML = curRound.rightLetters.join("");
