@@ -30,7 +30,9 @@ class Round {
     }
     console.log("User guess: " + userGuess + ": " + isGood);
     if (isGood == false) {
-      this.attempts--;
+      if (!this.wrongLetters.includes(userGuess)) {
+        this.attempts--;
+      }
       this.wrongLetters.push(userGuess);
     }
   }
