@@ -61,7 +61,7 @@ function insEventHandler() {
     if (curRound.attempts == 0) {
       return;
     }
-    let userGuess = event.key;
+    let userGuess = event.key.toLowerCase();
     curRound.gameLogic(userGuess);
     renderGameState();
     if (curRound.checkWin()) {
