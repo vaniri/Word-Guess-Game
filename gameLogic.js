@@ -32,8 +32,8 @@ class Round {
     if (isGood == false) {
       if (!this.wrongLetters.includes(userGuess)) {
         this.attempts--;
+        this.wrongLetters.push(userGuess);
       }
-      this.wrongLetters.push(userGuess);
     }
   }
 
