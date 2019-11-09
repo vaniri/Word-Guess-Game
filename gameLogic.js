@@ -59,11 +59,15 @@ function startGame() {
 }
 
 function insEventHandler() {
+  let checkAlpha = /^[a-z]$/i;
   document.addEventListener("keyup", event => {
     if (curRound.attempts == 0) {
       return;
     }
     let userGuess = event.key.toLowerCase();
+    if (!checkAlpha.test(userGuess)) {
+      return;
+    }
     curRound.gameLogic(userGuess);
     renderGameState();
     if (curRound.checkWin()) {
