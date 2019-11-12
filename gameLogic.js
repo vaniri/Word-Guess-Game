@@ -1,12 +1,12 @@
 let curRound = null;
 const roundInfo = [
-  // { word: "kenny", pic: "kenny.png" },
-  // { word: "towelie", pic: "towelie.jpg" },
-  // { word: "mackey", pic: "mkay.jpg" },
-  // { word: "fingerbang", pic: "fingerbang.jpg" },
-  // { word: "wendy", pic: "wendy.jpeg" },
-  // { word: "butters", pic: "butters.jpg" },
-  // { word: "stan", pic: "stan.png" },
+  { word: "kenny", pic: "kenny.png" },
+  { word: "towelie", pic: "towelie.jpg" },
+  { word: "mackey", pic: "mkay.jpg" },
+  { word: "fingerbang", pic: "fingerbang.jpg" },
+  { word: "wendy", pic: "wendy.jpeg" },
+  { word: "butters", pic: "butters.jpg" },
+  { word: "stan", pic: "stan.png" },
   { word: "kyle", pic: "kyle.jpg" }
 ];
 
