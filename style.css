@@ -1,5 +1,6 @@
 body {
     background-image: url("image/backdrop-874452_1280.jpg");
+    font-family: "Lato", "Open Sans", "Helvetica Neue";
 }
 
 .game_section {
@@ -18,7 +19,7 @@ body {
     opacity: 0.7;
     background-position: bottom;
     max-width: 45%;
-    height: 490px;
+    height: 500px;
     color: rgb(255, 123, 0);
     text-align: center;
     margin-left: 10px;;
@@ -27,32 +28,33 @@ body {
 }
 
 .game_container h1 {
-    padding-top: 20px;
+    padding-top: 15px;
     font-size: 30px;
-    font-weight: 300;
+    font-weight: 400;
     background: linear-gradient(to right, orange, red, purple);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-top: 15px;
+    
 }
 
 #right_letters {
     padding: 7px 0;
-    font-size: 25px;
-    font-weight: 800;
+    font-size: 27px;
+    font-weight: 600;
     color: white;
     background-image: linear-gradient(to right, red, orange, purple);
 }
 
 #wrong_letters {
-    font-size: 20px;
+    font-size: 25px;
     color: rgb(255, 123, 0);
+    font-weight: 600;
 }
 
 #attempts {
-    font-size: 25px;
+    font-size: 27px;
     font-weight: 400;
-    padding: 20px 0;
+    margin-bottom: 10px;
     color: red;
 }
 
