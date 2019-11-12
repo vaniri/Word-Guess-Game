@@ -1,12 +1,13 @@
 let curRound = null;
 const roundInfo = [
-  { word: "kenny", pic: "kenny.jpg" },
-  { word: "towelie", pic: "towelie.jpg" },
-  { word: "mackey", pic: "mkay.jpg" },
-  { word: "fingerbang", pic: "fingerbang.jpg" },
-  { word: "wendy", pic: "wendy.jpeg" },
-  { word: "butters", pic: "butters.jpg" },
-  { word: "stan", pic: "stan.png" }
+  // { word: "kenny", pic: "kenny.png" },
+  // { word: "towelie", pic: "towelie.jpg" },
+  // { word: "mackey", pic: "mkay.jpg" },
+  // { word: "fingerbang", pic: "fingerbang.jpg" },
+  // { word: "wendy", pic: "wendy.jpeg" },
+  // { word: "butters", pic: "butters.jpg" },
+  // { word: "stan", pic: "stan.png" },
+  { word: "kyle", pic: "kyle.jpg" }
 ];
 
 // Object-constructor for one round
@@ -50,7 +51,7 @@ window.onload = () => {
 };
 
 function startGame() {
-  document.querySelector("body").style.background = `url("image/Hk9nelN.jpg") no-repeat right`;
+  document.querySelector(".game_section").style.background = `url("image/SPBack.jpg")`;
   let randomObj = roundInfo[Math.floor(Math.random() * roundInfo.length)];
   curRound = new Round(randomObj.word, randomObj.pic);
   renderGameState();
@@ -83,7 +84,7 @@ function insEventHandler() {
 function showWin() {
   document.getElementById("wrong_letters").innerHTML = "";
   document.getElementById("right_letters").innerHTML = "You Get It!";
-  document.querySelector("body").style.background = `url("image/${curRound.pic}")`;
+  document.querySelector(".game_section").style.background = `url("image/${curRound.pic}")`;
   setTimeout(startGame, 3000);
 }
 
