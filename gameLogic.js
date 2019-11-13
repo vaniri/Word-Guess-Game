@@ -29,7 +29,7 @@ class Round {
         isGood = true;
       }
     }
-    console.log("User guess: " + userGuess + ": " + isGood);
+   
     if (isGood == false) {
       if (!this.wrongLetters.includes(userGuess)) {
         this.attempts--;
@@ -55,8 +55,6 @@ function startGame() {
   let randomObj = roundInfo[Math.floor(Math.random() * roundInfo.length)];
   curRound = new Round(randomObj.word, randomObj.pic);
   renderGameState();
-  document.getElementById("game_win").innerHTML = "";
-  document.getElementById("game_lose").innerHTML = "";
 }
 
 function insEventHandler() {
