@@ -1,17 +1,19 @@
 body {
-    background-image: url("image/backdrop-874452_1280.jpg");
+    background-color: black;
+
     font-family: "Lato", "Open Sans", "Helvetica Neue";
 }
 
 .game_section {
     background-image: url("image/SPBack.jpg");
-    background-repeat: repeat;
-    height: 700px;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 90%;
     width: 95%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    margin: 0 20px;
+    margin-left: 20px;
 }
 
 .game_container {
