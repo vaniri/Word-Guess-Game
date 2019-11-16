@@ -51,7 +51,7 @@ window.onload = () => {
 };
 
 function startGame() {
-  document.querySelector(".game_section").style.background = `url("image/SPBack.jpg")`;
+  document.querySelector(".game_section").style.background = `url("image/SPBack.jpg") no-repeat, cover`;
   let randomObj = roundInfo[Math.floor(Math.random() * roundInfo.length)];
   curRound = new Round(randomObj.word, randomObj.pic);
   renderGameState();
