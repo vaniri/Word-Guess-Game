@@ -51,7 +51,7 @@ window.onload = () => {
 };
 
 function startGame() {
-  document.querySelector(".game_section").style.background = `url("image/SPBack.jpg") no-repeat, cover`;
+  document.querySelector(".game_section").style.backgroundImage = `url("image/SPBack.jpg")`;
   let randomObj = roundInfo[Math.floor(Math.random() * roundInfo.length)];
   curRound = new Round(randomObj.word, randomObj.pic);
   renderGameState();
@@ -60,6 +60,9 @@ function startGame() {
 function insEventHandler() {
   let checkAlpha = /^[a-z]$/i;
   document.addEventListener("keyup", event => {
+    if (!curRound) {
+      return;
+    }
     if (curRound.attempts == 0) {
       return;
     }
@@ -82,7 +85,7 @@ function insEventHandler() {
 function showWin() {
   document.getElementById("wrong_letters").innerHTML = "";
   document.getElementById("right_letters").innerHTML = "You Get It!";
-  document.querySelector(".game_section").style.background = `url("image/${curRound.pic}")`;
+  document.querySelector(".game_section").style.backgroundImage = `url("image/${curRound.pic}")`;
   setTimeout(startGame, 3000);
 }
 
