@@ -1,6 +1,5 @@
 body {
     background-color: black;
-
     font-family: "Lato", "Open Sans", "Helvetica Neue";
 }
 
@@ -19,53 +18,60 @@ body {
 
 .game_container {
     background-image: url("image/SouthPark2.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
+    background-size: cover;
     opacity: 0.7;
-    max-width: 45%;
-    height: 500px;
+    width: 50vw;
+    height: 31.25vw;
     color: rgb(255, 123, 0);
     text-align: center;
-    margin-left: 10px;;
+    margin-left: 10px;
+    margin-right: 0;
   
 
 }
 
 .game_container h1 {
     position: relative;
-    padding-top: 15px;
-    font-size: 30px;
+    padding-top: 0.5vw;
+    font-size: 2vw;
     font-weight: 400;
     background: linear-gradient(to right, orange, red, purple);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-bottom: 0;
     
 }
 
 #right_letters {
-    padding: 7px 0;
-    font-size: 27px;
+    width: 100%;
+    overflow: auto;
+    margin: auto;
+    padding: 0.25vw 0;
+    font-size: 2vw;
     font-weight: 400;
     color: white;
     background-image: linear-gradient(to right, red, orange, purple);
 }
 
 #wrong_letters {
-    font-size: 25px;
+    font-size: 2vw;
     color: rgb(255, 123, 0);
     font-weight: 400;
+    width: 100%;
 }
 
 #attempts {
-    font-size: 27px;
+    font-size: 1.7vw;
     font-weight: 400;
-    margin-bottom: 10px;
+    margin-bottom: 0.5vw;
     color: red;
+    position: relative;
+    margin: 0.7vw;
 }
 
 #game_win, #game_lose {
-    padding-top: 10px;
-    font-size: 30px;
+    padding-top: 0.5vw;
+    font-size: 2.3vw;
     font-weight: 300;
 }
 
